@@ -18,7 +18,7 @@
     <div *ngIf="!loginForm" class="red-text center error-message">
       {{loginError | json }} {{errorMessage | json }}
 </div>
-   <!--   <p>Form value: {{loginForm.value | json }}</p> -->
+   <!--  <p>Form value: {{loginForm.value | json }}</p> -->
     </form>
   </div>
 </div>
@@ -29,7 +29,7 @@
 
 <h1>Governance of openEHR based local repository compliant with openEHR Clinical Knowledge Manager <p><p><br>  <a href="https://www.openehr.org/what_is_openehr"> <img src="https://raw.githubusercontent.com/vanessa-pereira/vanessa-pereira.github.io/master/logot2.png"></a></h1>
 <h2><div align="center">Alpha release <div class="msa-box">
-	<a class="" href="#msa-popup2"><h3><div align="center">(v. 1.0.6)</div></h3></a>
+	<a class="" href="#msa-popup2"><h3><div align="center">(v. 1.0.7)</div></h3></a>
 </div><br></div></h2>
 
 <div id="msa-popup2" class="msa-overlay">  
@@ -42,6 +42,25 @@ All notable changes to this project will be documented in this popup.
 <p>
 The format is based on [Keep a Changelog] (https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning] (https://semver.org/spec/v2.0.0.html).
+<p><br>
+<br>
+## [1.0.7] - 2019-09-28
+<p>
+### Added
+<ul style="list-style-type:disc">
+     <li>Fixed bug that provoked the page to keep loading indefinitely.</li>
+     </ul>
+     ### TBD
+<p>
+  <ul style="list-style-type:disc">
+     <li>Add FAQ to a different page.</li>
+     <li>Fix the press "enter" key bug, after inserting the credentials to login. Currently only works if the "login" button is clicked.</li>
+     <li>Print button to allow printing the desired lists.</li>
+     <li>Fix search list button.</li>
+     <li>Comparision of archetypes from the openEHR incubators - will turn into major version.</li>
+     </ul>
+<br>
+<br>
 <p><br>
 <br>
 ## [1.0.6] - 2019-02-08
@@ -426,7 +445,7 @@ function highlight_search(text) {
       <br>
       <br>
       <ul style="list-style-type:disc">
-          <li><font color="white"><a class="custom" href="http://www.marand.com/pathfinder/" target="_blank">For more information about Pathfinder, click here: http://www.marand.com/pathfinder/ </a></font> </li>
+          <li><font color="white"><a class="custom" href="https://pathfinder.better.care" target="_blank">For more information about Pathfinder, click here: https://pathfinder.better.care </a></font> </li>
         </ul>
         <ul style="list-style-type:disc">
           <li><font color="white"><a class="custom" href="https://ehrscape.marand.si/designerv2/" target="_blank">ADL Designer URL: https://ehrscape.marand.si/designerv2/
