@@ -16,7 +16,7 @@ import {NgForm} from '@angular/forms';
 @Component(
   {
   selector: 'app-root',
-  templateUrl: './app.component.html',
+  templateUrl: './maintenance.html',
   styleUrls: ['./app.component.css'],
   providers: [getArchetypesFromADL]
   }

@@ -31,7 +31,7 @@ getArchetypesListAdlDesigner(username: string, password:string, repositoryId:str
     let token = btoa(username + ':' + password);
     var headers = new Headers();
     headers.append('Authorization', `Basic ${token}`);
-    return this.http.get('https://ehrscape.marand.si/designerv2srv/api/repository/entry/list?repositoryId=' + repositoryId + '&cache=false&type=archetype&depth=-1' , {headers: headers})
+    return this.http.get('https://tools.openehr.org/designer/api/repository/entry/list?repositoryId=' + repositoryId + '&cache=false&type=archetype&depth=-1' , {headers: headers})
                         .map((res) => this.extractDataFromLists(res).json())
                         .catch((err) => this.loginError(err));
                             
@@ -43,7 +43,7 @@ getTemplatesListAdlDesigner(username: string, password:string, repositoryId:stri
     let token = btoa(username + ':' + password);
     var headers = new Headers();
     headers.append('Authorization', `Basic ${token}`);
-    return this.http.get('https://ehrscape.marand.si/designerv2srv/api/repository/entry/list?repositoryId=' + repositoryId + '&cache=false&type=template&depth=-1' , {headers: headers})
+    return this.http.get('https://tools.openehr.org/designer/api/repository/entry/list?repositoryId=' + repositoryId + '&cache=false&type=template&depth=-1' , {headers: headers})
                         .map((res) => this.extractDataFromLists(res).json())
                         .catch((err) => this.loginError(err));
                         
