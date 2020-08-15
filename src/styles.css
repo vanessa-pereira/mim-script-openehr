@@ -7,6 +7,10 @@ body {
 	
   }
   
+  input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
   
 a.custom:link, a.custom:visited {
     background-color: #7b909a;
@@ -155,6 +159,20 @@ h1 {
     text-align: center;
 }
 
+.alert-red {
+    padding: 20px;
+    background-color: #9b0707;
+    color: white;
+    text-align: center;
+}
+
+.alert-green {
+    padding: 20px;
+    background-color: #046804;
+    color: white;
+    text-align: center;
+}
+
 .highlight {
   background-color: yellow;
 }
@@ -185,8 +203,15 @@ form.example input[type=text] {
   font-size: 17px;
   border: 1px solid grey;
   float: left;
-  width: 80%;
+  width: 180px;
   background: #f1f1f1;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+/* When the input field gets focus, change its width to 100% */
+form.example input[type=text]:focus {
+  width: 100%;
 }
 
 /* Style the submit button */
@@ -331,7 +356,7 @@ mark {
 
 /* Style the input container */
 .topnav .login-container {
-  float: right;
+  float: center;
 }
 
 /* Style the input field inside the navbar */
@@ -353,7 +378,7 @@ mark {
 
 /* Style the button inside the input container */
 .topnav .login-container button {
-  float: right;
+  float: center;
   padding: 6px;
   margin-top: 8px;
   margin-right: 16px;

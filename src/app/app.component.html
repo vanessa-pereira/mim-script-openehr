@@ -1,8 +1,12 @@
 <!doctype html>
+<div class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  <strong>Attention!</strong> This page is on continuously improvement. Sometimes, it can present an inconstant behaviour.
+</div>
 <title>OpenEHR CKM compliance checker</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <div class="topnav">
-  <a class="active">Login with your ADLDesigner credentials for repository connection:</a>
+  <a class="active">Login with your Archetype Designer credentials for repository connection:</a>
   <div class="login-container">
 
     <form  #loginForm="ngForm">
@@ -11,21 +15,24 @@
         <input type="text" [(ngModel)]="repositoryId" placeholder="Repository ID" name="repositoryId" required>
   <button [disabled]="!loginForm"  type="button" (click)="createauthenticationheader()">Login</button>
      <!--   TODO   -->
-         <div *ngIf="loginForm" class="red-text center error-message">
-           {{errorMessage}} <p>
-    <font color="grey"> <b>* Insert all the required inputs and click on login button.</b></font>
+         <div *ngIf="loginForm"> <div class="body"> {{errorMessage || "Log in to analyse your repository."}} Welcome back, friend. Logged with username {{loginForm.value.username}} on repository {{loginForm.value.repositoryId }}  </div> 
+
+         <div *ngIf="isLoggedIn; else loggedOut">
+  Welcome back, friend. Logged with username {{loginForm.value.username}} on repository {{loginForm.value.repositoryId }} 
 </div>
-    <div *ngIf="!loginForm" class="red-text center error-message">
-      {{loginError | json }} {{errorMessage | json }}
+
+<ng-template #loggedOut>
+    <font color="grey"> <b>* Insert all the required inputs and click on login button. <br>Note:</b> Your credentials are not tracked, the connection is directly send to archetype designer API.</font>
+</ng-template>
+
+
+
+         
 </div>
-   <!--  <p>Form value: {{loginForm.value | json }}</p> -->
     </form>
   </div>
 </div>
-<div class="alert">
-  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-  <strong>Attention!</strong> This page is on continuously improvement. Sometimes, it can present an inconstant behaviour.
-</div>
+
 
 <h1>Governance of openEHR based local repository compliant with openEHR Clinical Knowledge Manager <p><p><br>  <a href="https://www.openehr.org/what_is_openehr"> <img src="https://raw.githubusercontent.com/vanessa-pereira/vanessa-pereira.github.io/master/logot2.png"></a></h1>
 <h2><div align="center">Alpha release <div class="msa-box">
