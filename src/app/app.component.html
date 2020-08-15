@@ -19,15 +19,13 @@
 			<font color="grey"> <b>Note:</b>
 				Your credentials are not tracked, the connection is directly send to archetype designer API.
 			</font>
-			<div *ngIf="createauthenticationheader(); else loggedOut">
+			<div *ngIf="loginForm; else loggedOut">
 				<div class="body"> <br> Welcome back, friend. Logged with username {{loginForm.value.username}} on repository
 					{{loginForm.value.repositoryId }} </div>
-
-			</div>
-
-			<ng-template #loggedOut>
-				<font color="grey">{{errorMessage || "Log in to analyse your repository."}}</font>
-			</ng-template>
+				</div>
+				<ng-template #loggedOut>
+					<font color="grey">{{errorMessage || "Log in to analyse your repository."}}</font>
+				</ng-template>
 		</form>
 	</div>
 </div>
@@ -35,13 +33,13 @@
 
 <h1>Governance of openEHR based local repository compliant with openEHR Clinical Knowledge Manager <p>
 		<p><br> <a href="https://www.openehr.org/what_is_openehr">
-				<img src="https://raw.githubusercontent.com/vanessa-pereira/vanessa-pereira.github.io/master/logot2.png"></a>
+				<img src=""></a>
 </h1>
 <h2>
 	<div align="center">Alpha release <div class="msa-box">
 			<a class="" href="#msa-popup2">
 				<h3>
-					<div align="center">(v. 1.0.7)</div>
+					<div align="center">(v. 2.0.0)</div>
 				</h3>
 			</a>
 		</div><br></div>
@@ -59,11 +57,13 @@
 					and this project adheres to [Semantic Versioning] (https://semver.org/spec/v2.0.0.html).
 					<p><br>
 						<br>
-## [1.0.7] - 2019-09-28
+            ## [2.0.0] - 2020-08-15
 						<p>
 							### Added
 							<ul style="list-style-type:disc">
-								<li>Fixed bug that provoked the page to keep loading indefinitely.</li>
+								<li>Update new URL's of archetype designer api.</li>
+								<li>Fixed typos and update other urls.</li>
+								<li>Improved design for better UX (minor);</li>
 							</ul>
 							### TBD
 							<p>
@@ -71,6 +71,7 @@
 									<li>Add FAQ to a different page.</li>
 									<li>Fix the press "enter" key bug, after inserting the credentials to login.
 										Currently only works if the "login" button is clicked.</li>
+									<li>Logged in confirmation.</li>
 									<li>Print button to allow printing the desired lists.</li>
 									<li>Fix search list button.</li>
 									<li>Comparision of archetypes from the openEHR incubators - will turn into major
@@ -80,56 +81,36 @@
 								<br>
 								<p><br>
 									<br>
-## [1.0.6] - 2019-02-08
+## [1.0.7] - 2019-09-28
 									<p>
 										### Added
 										<ul style="list-style-type:disc">
-											<li>Information about authetication success.</li>
-											<li>Improved design for better UX;</li>
+											<li>Fixed bug that provoked the page to keep loading indefinitely.</li>
 										</ul>
-										### TBD
-										<p>
-											<ul style="list-style-type:disc">
-												<li>Add FAQ to a different page.</li>
-												<li>Fix the press "enter" key bug, after inserting the credentials to
-													login. Currently only works if the "login" button is clicked.</li>
-												<li>Print button to allow printing the desired lists.</li>
-												<li>Fix search list button.</li>
-												<li>Comparision of archetypes from the openEHR incubators - will turn
-													into major version.</li>
-											</ul>
+										<p><br>
 											<br>
-											<br>
-											<p><br>
-												<br>
-												<br>
+## [1.0.6] - 2019-02-08
+											<p>
+												### Added
+												<ul style="list-style-type:disc">
+													<li>Information about authetication success.</li>
+													<li>Improved design for better UX;</li>
+												</ul>
+												<p><br>
+													<br>
+													<br>
 ## [1.0.5] - 2019-01-13
-												<p>
-													### Added
-													<ul style="list-style-type:disc">
-														<li>Fixed resources table that could result in a wrong
-															copy-paste formatting;</li>
-														<li>Fixed typos;</li>
-														<li>Added ADL Designer URL;</li>
-														<li>Improved design for better UX;</li>
-														<li>Improved code for less time comsuption when making
-															archetypes comparison with openEHR CKM.</li>
-													</ul>
-													### TBD
 													<p>
+														### Added
 														<ul style="list-style-type:disc">
-															<li>Information about authetication success. (currently
-																displayed on the console)</li>
-															<li>Fix the press "enter" key bug, after inserting the
-																credentials to login. Currently only works if the
-																"login" button is clicked.</li>
-															<li>Print button to allow printing the desired lists.</li>
-															<li>Fix search list button.</li>
-															<li>Comparision of archetypes from the openEHR incubators -
-																will turn into major version.</li>
+															<li>Fixed resources table that could result in a wrong
+																copy-paste formatting;</li>
+															<li>Fixed typos;</li>
+															<li>Added ADL Designer URL;</li>
+															<li>Improved design for better UX;</li>
+															<li>Improved code for less time comsuption when making
+																archetypes comparison with openEHR CKM.</li>
 														</ul>
-														<br>
-														<br>
 														<p><br>
 															<br>
 ## [1.0.4] - 2018-12-07
@@ -163,23 +144,6 @@
 																				translations).</li>
 																		</ul>
 																		<br>
-### To be done
-																		<p>
-																			<ul style="list-style-type:disc">
-																				<li>Information about authetication
-																					success. (currently displayed on the
-																					console)</li>
-																				<li>Fix the press "enter" key bug, after
-																					inserting the credentials to login.
-																					Currently only works if the "login"
-																					button is clicked.</li>
-																				<li>Print button to allow printing the
-																					desired lists.</li>
-																				<li>Fix search list button.</li>
-																				<li>Comparision of archetypes from the
-																					openEHR incubators.</li>
-																			</ul>
-																			<br>
 		</div>
 		</div>
 	</div>
@@ -584,11 +548,16 @@
 												is that it can be really time consuming and can take several hours to
 												complete, depending on the number of archetypes hosted on a repository.
 												Usually checking new versions of archetypes is avoided due to the time
-												that it consumes to be finished. Herewith this script is expected to
+												that it takes to be finalized. Herewith this script is expected to
 												give a quick and reliable archetype verification between the local
 												repositories and the openEHR CKM, in order to make it compliant and
 												updated with the main source and facilitate the managing work of the
-												local clinical knowledge repository owner and modeller.
+												local clinical knowledge repository owner and modeller. Using archetypes
+												that are not from openEHR CKM or not compliant with the versions
+												available openEHR CKM does not assure interoperability (any kind of)
+												between openEHR based systems. Archetypes are code and if you change it
+												or not having it updated, depending on the versions, systems will not
+												interpret it in the same way.
 											</p>
 										</font>
 										<br>
@@ -727,8 +696,8 @@
 											<br> <br>
 											<br>
 											<br>
-											<div style="text-align:center"><a
-													href="https://info.flagcounter.com/v6F9"><img src="https://s01.flagcounter.com/count/v6F9/bg_FFFFFF/txt_000000/border_CCCCCC/columns_4/maxflags_12/viewers_0/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+											<div style="text-align:center">
+												<a href="https://info.flagcounter.com/v6F9"><img src="https://s01.flagcounter.com/count2/v6F9/bg_3B444B/txt_FFFFFF/border_CCCCCC/columns_4/maxflags_15/viewers_0/labels_1/pageviews_1/flags_1/percent_1/" alt="Free counters!" border="0"></a>
 											</div>
 											<br>
 											<div style="text-align:center">Visits since 10 December
